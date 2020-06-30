@@ -1,24 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Route, BrowserRouter, Switch } from 'react-router-dom'
 import './App.css';
+import Sample1 from './templates/Sample1';
+import Sample2 from './templates/Sample2';
+import { Form } from './components/Form';
+import ChooseTemplate from './components/ChooseTemplate';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='form-container'>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path='/'>
+            <Form></Form>
+          </Route>
+          <Route path='/show'>
+            <ChooseTemplate></ChooseTemplate>
+          </Route>
+          {/* <Route path='/download'>
+            <Form></Form>
+          </Route> */}
+        </Switch>
+      </BrowserRouter>
+      {/* <Sample1></Sample1> */}
+      {/* <Sample2></Sample2> */}
     </div>
   );
 }

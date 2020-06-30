@@ -1,0 +1,10 @@
+.form-container{
+    padding: 1rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+.table-borderless td,
+.table-borderless th {
+    border: 0;
+}
